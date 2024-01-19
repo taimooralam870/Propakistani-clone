@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">      
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<title>proPakistani</title>
+    <style>
+        @font-face {
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/lato/v24/S6u9w4BMUTPHh7USSwaPGQ3q5d0N7w.woff2) format('woff2');
+            unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/lato/v24/S6u9w4BMUTPHh7USSwiPGQ3q5d0.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/lato/v24/S6uyw4BMUTPHjxAwXiWtFCfQ7A.woff2) format('woff2');
+            unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/lato/v24/S6uyw4BMUTPHjx4wXiWtFCc.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/lato/v24/S6u9w4BMUTPHh6UVSwaPGQ3q5d0N7w.woff2) format('woff2');
+            unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/lato/v24/S6u9w4BMUTPHh6UVSwiPGQ3q5d0.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 900;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/lato/v24/S6u9w4BMUTPHh50XSwaPGQ3q5d0N7w.woff2) format('woff2');
+            unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 900;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/lato/v24/S6u9w4BMUTPHh50XSwiPGQ3q5d0.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: FontAwesome;
+            src: url(https://propakistani.pk/wp-content/themes/ppv5/fonts/fontawesome-webfont.eot?v=4.7.0);
+            src: url(https://propakistani.pk/wp-content/themes/ppv5/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0) format("embedded-opentype"), url(https://propakistani.pk/wp-content/themes/ppv5/fonts/fontawesome-webfont.woff2?v=4.7.0) format("woff2"), url(https://propakistani.pk/wp-content/themes/ppv5/fonts/fontawesome-webfont.woff?v=4.7.0) format("woff"), url(https://propakistani.pk/wp-content/themes/ppv5/fonts/fontawesome-webfont.ttf?v=4.7.0) format("truetype"), url(https://propakistani.pk/wp-content/themes/ppv5/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular) format("svg");
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Andada';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/andada/v19/uK_y4riWaego3w9hAxcSEP2UXnow.woff2) format('woff2');
+            unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+            font-family: 'Andada';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/andada/v19/uK_y4riWaego3w9hDRcSEP2UXg.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: roboto regular;
+            src: url(https://propakistani.pk/wp-content/plugins/thrive-comments/assets/css/fonts/Roboto-Regular.ttf) format("truetype");
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/lato/v24/S6u9w4BMUTPHh7USSwaPGQ3q5d0N7w.woff2) format('woff2');
+            unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/lato/v24/S6u9w4BMUTPHh7USSwiPGQ3q5d0.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/lato/v24/S6uyw4BMUTPHjxAwXiWtFCfQ7A.woff2) format('woff2');
+            unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/lato/v24/S6uyw4BMUTPHjx4wXiWtFCc.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/lato/v24/S6u9w4BMUTPHh6UVSwaPGQ3q5d0N7w.woff2) format('woff2');
+            unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/lato/v24/S6u9w4BMUTPHh6UVSwiPGQ3q5d0.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 900;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/lato/v24/S6u9w4BMUTPHh50XSwaPGQ3q5d0N7w.woff2) format('woff2');
+            unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 900;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/lato/v24/S6u9w4BMUTPHh50XSwiPGQ3q5d0.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+    </style>
+</head>
+
+<body style="font-family: lato;">
+    <section class="Marque hidden md:block lg:block">
+        <div class="max-w-[1280px] mx-auto">
+            <div class="uppercase flex text-[16px] text-[#adb3b9] gap-2 py-2 px-4">
+                <div class="hover:text-[#242A3A] cursor-pointer">ProPrice</div>
+                <div class="hover:text-[#242A3A] cursor-pointer">lens</div>
+                <div class="hover:text-[#242A3A] cursor-pointer">how to</div>
+                <div class="hover:text-[#242A3A] cursor-pointer">tools</div>
+                <div class="hover:text-[#242A3A] cursor-pointer">3G, 4g & call packages</div>
+                <div class="hover:text-[#242A3A] cursor-pointer">careers</div>
+                <div class="hover:text-[#242A3A] cursor-pointer">about</div>
+                <div class="hover:text-[#242A3A] cursor-pointer">contact us</div>
+            </div>
+        </div>
+    </section>
+    <section class="header bg-[#F6F9FA]  sticky top-0" style="z-index: 99;">
+        <div class="max-w-[1280px] mx-auto">
+            <div class="flex justify-between bg-[#239991] lg:bg-[#F6F9FA] md:bg-[#F6F9FA] px-4 items-center">
+                <div class="lg:hidden md:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000000" width="24px"
+                        height="24px">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <rect width="24" height="2" x="3" y="4" fill="#ffffff"></rect>
+                            <rect width="24" height="2" x="3" y="10" fill="#ffffff"></rect>
+                            <rect width="24" height="2" x="3" y="16" fill="#ffffff"></rect>
+                        </g>
+                    </svg>
+                </div>
+                <div class="flex  gap-6 ">
+                    <div class="hidden md:block lg:hidden">
+                        <svg class="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000000" width="24px"
+                            height="24px">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <rect width="24" height="2" x="3" y="4" fill="#1D1D1B"></rect>
+                                <rect width="24" height="2" x="3" y="10" fill="#1D1D1B"></rect>
+                                <rect width="24" height="2" x="3" y="16" fill="#1D1D1B"></rect>
+                            </g>
+                        </svg>
+                    </div>
+                    <button class="bg-[#239991] px-6 h-[60px]">
+                        <a href="#"><img class="max-w-[228px]" src="https://propakistani.pk/wp-content/uploads/2020/09/pp_site_logo.png"></a>
+                    </button>
+                    <div class=" !hidden md:!hidden lg:!block ">
+                        <div class="flex text-[19px] font-[400] text-[#4e5c64] ">
+                            <div class="cursor-pointer py-4 px-2 hover:bg-[#EFF4F5]">Tech and Telecom</div>
+                            <div  class="cursor-pointer py-4 px-2 hover:bg-[#EFF4F5]">Business</div>
+                            <div  class="cursor-pointer py-4 px-2 hover:bg-[#EFF4F5]">Carbase</div>
+                            <div  class="cursor-pointer py-4 px-2 hover:bg-[#EFF4F5]">Education</div>
+                           
+                            <div  class="cursor-pointer py-4 px-2 hover:bg-[#EFF4F5]">Sports</div>
+                            <div class="cursor-pointer py-4 px-2 hover:bg-[#EFF4F5]">
+                                Pakistan
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 12l-6-6 1.41-1.41L10 9.17l4.59-4.58L16 6z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            
+                            <div  class="cursor-pointer py-4 px-2 hover:bg-[#EFF4F5]">Health</div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="searchbar lg:bg-[#EFF4F5] py-4 px-4">
+                    <img class="w-[30px] cursor-pointer hidden md:block lg:block" src="https://cdn.shopify.com/s/files/1/0797/1936/6958/files/icons8-search-64.png?v=1705577173">
+                    <img class="w-[30px] md:hidden lg:hidden" src="https://cdn.shopify.com/s/files/1/0797/1936/6958/files/images__1_-removebg-preview.png?v=1705670851">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="max-w-[1280px] mx-auto px-4 py-2">
+            <h1 class="entry-title lg:text-[40px] text-[27px] lg:leading-[48px] leading-[33px] font-[900] text-[#242a3a]"
+                style="font-family: lato;">
+                Rupee Abruptly Halts 9-Day Win Streak Versus US Dollar Despite UAE News</h1>
+            <div class="flex  lg:flex-row md:flex-row items-center py-4 justify-between">
+                <div class="text-[14px] lg:text-[18px]">
+                    <span class="author vcard">By <a class="url fn n text-[#239991]"
+                            href="https://propakistani.pk/author/team-propakistani/">ProPK Staff</a></span>
+                    <span class="d-block d-md-inline"> <span class="hidden-sm-down sepp mx-1">|</span> Published Jan 16,
+                        2024 <span class="sepp mx-1">|</span> 4:48 pm</span>
+                </div>
+                <div>
+                    <img class="w-[160px] cursor-pointer" src="https://getvibeznow.com/savings/assets/images/social-icons.svg">
+                </div>
+            </div>
+            <div> <img class="w-full" src="https://propakistani.pk/wp-content/uploads/2023/04/rupee-dollar-PP.jpg">
+            </div>
+        </div>
+    </section>
+    <section>
+        <style>
+            .icon:hover {
+                transform: scale(1.1); /* Adjust the scale factor as needed */
+                transition: transform 0.2s ease; /* Adjust the transition duration and timing function as needed */
+            }
+        </style>
+        <div class="max-w-[1280px]  lg:block mx-auto py-8" style="font-family: lato;">
+            <div class="flex flex-col lg:flex-row md:flex-col gap-2 justify-between ">
+                <div class="flex md:grid cursor-pointer md:grid-cols-4 hidden lg:block md:block lg:sticky top-[90px] lg:h-[350px] flex-row justify-center lg:justify-start lg:flex-col center lg:items-start py-2 lg:py-0  lg:w-[8%] gap-2 px-4" style=";">
+                    <div class="">
+                        <div class="icon cursor-pointer bg-[#4C76BE] lg:bg-[#F6F9FA]  flex items-center justify-center hover:bg-[#4C76BE] hover:text-white">
+                            <i class="fa-brands py-8 px-7 lg:text-[#83939d] text-white hover:text-white fa-facebook-f fa-lg"></i>
+                        </div>
+                    </div>
+                  <div class="">
+                    <div class="icon cursor-pointer hover:bg-[#05B8EC] bg-[#05B8EC] lg:bg-[#F6F9FA] flex items-center justify-center"> <i class="fa-brands text-white py-8 px-6   hover:text-white lg:text-[#83939d] fa-twitter fa-lg"></i></div>
+                    
+                  </div>
+                  <div class="">
+                    <div class="icon cursor-pointer hover:bg-[#28B200] bg-[#28B200] lg:bg-[#F6F9FA]  flex items-center justify-center"> <i class="fa-brands text-white py-8 px-6 hover:text-white  lg:text-[#83939d] fa-whatsapp fa-lg"></i></div>
+                  </div>
+                  <div class="">
+                    <div class="icon cursor-pointer hover:bg-[#4C76BE]  bg-[#4C76BE] lg:bg-[#F6F9FA]  flex items-center justify-center"> <i class="lg:text-[#83939d] text-white py-8 px-6 fa-brands hover:text-white fa-linkedin fa-lg"></i></div>
+                    
+                  </div>
+                    
+                </div>
+                <div class=" mx-auto lg:w-[69%] px-4" style="font-family:Andada;">
+                    <div  class="pb-[1rem]">
+                        <p
+                            class="inter-linking-text text-[#249991] bg-[#F5F5F5] py-4 text-[16px] px-4 font-[400]  border-l-4 border-[#239991] " style="font-family: Andada;">
+                            <a class="hover:text-white hover:bg-[#239991]" style="font-size:16px;" target="_blank"
+                                href="https://chat.whatsapp.com/KNA6Rsw8PVaEofrFPJig57"> 📢 For the latest Business news
+                                and analysis join ProPakistani's WhatsApp Group now! </a>
+                        </p>
+                    </div>
+                    <div class="text-[18px] leading-[27px] text-[#313131] pb-[1rem]">
+                        The Pakistani rupee broke its 9-day winning streak against the US Dollar today after opening
+                        trade at 281 in the interbank market.
+                    </div>
+                    <div class="text-[18px] leading-[27px] text-[#313131] pb-[1rem]">
+                        At 11:30 PM, it was stable, rising as high as 280 after gaining ~Rs. 1 against the greenback during intraday trade.
+                    </div>
+                    <div class="text-[18px] leading-[27px] text-[#313131] pb-[1rem]">
+                        The interbank rate later dropped back to 280 before closing at the same level for the remainder of the day. Open market rates across multiple currency counters were stable in the 280-281 range today.
+                    </div>
+                    <div class="text-[18px] leading-[27px] text-[#313131] pb-[1rem]">
+                        At 11:30 PM, it was stable, rising as high as 280 after gaining ~Rs. 1 against the greenback
+                        during intraday trade.
+                    </div>
+                    <div class="text-[18px] leading-[27px] text-[#313131] pb-[1rem]">
+                        At close, the PKR depreciated by 0.003 percent to close at 280.24 after losing one paisa against the dollar today.
+                    </div>
+                    <div class="py-4">
+                        <div
+                            class="text-[16px] flex flex-col py-4 items-center justify-center border-t-2 border-b-2 leading-[24px] text-[#313131] py-2">
+                            <p class="" style="letter-spacing: 8px; font-family: lato;" >ALSO READ</p>
+                            <p class="text-[#249991] hover:bg-[#249991] hover:text-white cursor-pointer leading-[30px] text-[20px]">Gold Price in Pakistan Falls After Multiple Increases
+                            </p>
+                        </div>
+                    </div>
+                    <div class="text-[18px] leading-[27px] text-[#313131] pb-[1rem]">
+                        The rupee closed in the red today, ending its 9-day win streak against the greenback. On a fiscal year-to-date basis, it has so far appreciated by 2.05 percent.
+                    </div>
+                    <div class="text-[18px] leading-[27px] text-[#313131] pb-[1rem]">
+                        Overall, the rupee is down nearly Rs. 61 since January 2023. Since April 2022, it is down over Rs. 108 against the greenback. As per exchange rate movements seen today, the PKR has lost one paisa against the dollar.
+                    </div>
+                    <div class="py-6">
+                        <div
+                            class="text-[16px] flex font-[400] flex-col py-4 items-center justify-center border-t-2 border-b-2 leading-[24px] text-[#313131] py-2">
+                            <p class="" style="letter-spacing: 8px; font-family: lato;">ALSO READ</p>
+                            <p class="text-[#249991] leading-[27px] font-[400] text-[18px]"><span class="hover:bg-[#249991] hover:text-white cursor-pointer"> Caretaker IT Minister, VP </span> <span class="hover:bg-[#249991] hover:text-white cursor-pointer"> Google</span>  <span
+                                    class="text-black"> Agree to Collaborate On AI Technology in Pakistan</span></p>
+                        </div>
+                    </div>
+                    <div class="text-[18px] leading-[27px] text-[#313131] pb-[1rem]">
+                        The PKR was green against most of the other major currencies in the interbank market today. It gained Rs. 1.16 against the Euro (EUR), Rs. 1.28 against the Canadian Dollar (CAD), Rs. 1.54 against the Australian Dollar (AUD), and Rs. 2.14 against the British Pound (GBP).
+                    </div>
+                    <div class="flex items-center justify-center py-6">
+                        <img src="	https://propakistani.pk/wp-content/uploads/2024/01/pp-8.jpg">
+                    </div>
+                    <div class="text-[18px] leading-[27px] text-[#313131] pb-[1rem]">
+                        The Pakistani rupee broke its 9-day winning streak against the US Dollar today after opening trade at 281 in the interbank market.
+                    </div>
+                    <div class="py-8 " style="font-family: lato;">
+                        <div
+                            class="flex items-center max-w-[590px] mx-auto gap-4 bg-[#f5f5f5] hover:bg-white cursor-pointer rounded-lg py-4 px-4" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;">
+                            <img class="w-[50px]"
+                                src="https://propakistani.pk/wp-content/uploads/2023/12/google-news-icon.png">
+                            <p class="lg:text-[18px] text-[15px] leading-[18px] lg:leading-[16px] font-[900] lg:leading-[22px]">Follow
+                                ProPakistani on Google News & scroll through your favourite content faster!</p>
+                        </div>
+                    </div>
+                    <div class=" flex lg:flex-row md:flex-row flex-col gap-4">
+                        <div class="bg-[#F6F7FA] flex gap-4 md:w-[60%] lg:w-[60%]">
+                            <div>
+                                <img class="cursor-pointer"
+                                    src="	https://secure.gravatar.com/avatar/6080a1ada04fb72f77469df7a30e7329?s=150&d=mm&r=g">
+                            </div>
+                            <div class="font-[600] leading-[20px] text-[#242a3a] text-[17px] py-4 "><span class="cursor-pointer">ProPK Staff</span></div>
+                        </div>
+                        <div class="lg:w-[50%] flex gap-6 justify-between md:w-[50%]" style="font-family: lato;">
+                            <div class="relative bg-[#F6F7FA] w-[60%] flex flex-col items-center justify-center" style="z-index: -1;">
+                                <div class=" text-[38px] font-[900] text-[#242a3a]">0</div>
+                                <div class="text-[#666e76] text-[16px] font-[400]">Shares</div>
+                                <div class="absolute top-[-10px] left-[-10px] px-2 py-2 bg-[#28AE60] rounded-full"><img
+                                        class="w-[20px]" src="https://freesvg.org/img/eco_systemedic_leaf.png"> </div>
+                            </div>
+                            <style>
+                                .icons:hover {
+                                    transform: scale(1.1); /* Adjust the scale factor as needed */
+                                    transition: transform 0.2s ease; /* Adjust the transition duration and timing function as needed */
+                                }
+                            </style>
+                            <div class="w-[40%]">
+                                <div class=" grid cursor-pointer grid-cols-2 gap-4">
+                                    <div class="icons border bg-[#4C76BE] py-4 px-4 flex justify-center items-center"> <i
+                                            class="fa-brands text-white fa-facebook-f fa-2x"></i>
+                                    </div>
+                                    <div class="icons border bg-[#05B8EC] py-4 px-4 flex items-center justify-center"> <i
+                                            class="fa-brands text-white fa-twitter fa-2x"></i></div>
+                                    <div class="icons border bg-[#28B200] py-4 px-4 flex items-center justify-center"> <i
+                                            class=" fa-brands text-white fa-whatsapp fa-2x"></i></div>
+                                    <div class="icons border bg-[#0077B5] py-4 px-4 flex items-center justify-center"> <i
+                                            class="fa-brands text-white fa-linkedin fa-2x"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       
+
+                    </div>
+                    <div>
+                        <div class="flex md:justify-between justify-center gap-4  lg:justify-between pt-8 text-[#393939]" style="font-family: roboto regular;">
+                            <div class="font-[400] text-[14px] text-[#393939]" >0 comments</div>
+                            <div class="flex">
+                                <div class="flex gap-4 cursor-pointer">
+                                    <div id="oldestText" class="text-[15px] text-[#848b91">Oldest</div>
+                                    <div class="m-4 relative">
+                                        <label for="mySelect" class="block text-sm font-medium text-gray-700"></label>
+                                        <div class="relative">
+                                            <select id="mySelect" name="mySelect"
+                                                class="hidden appearance-none bg-transparent border border-gray-300 rounded-md w-full py-2 px-3 leading-tight focus:outline-none focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                                                <option value="option1">Option 1</option>
+                                                <option value="option2">Option 2</option>
+                                                <option value="option3">Option 3</option>
+                                            </select>
+                                            <div
+                                                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                                <!-- Custom dropdown arrow icon -->
+                                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 20 20">
+                                                    <path d="M10 12l-8-8 1.5-1.5L10 9l6.5-6.5L18 4z" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="text-[14px] text-[#848b91]">comment first</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" flex flex-col items-center lg:items-start py-4 lg:flex-row gap-4">
+                        <div class="flex items-center justify-center">
+                            <img class="w-[50px]"
+                                src="https://propakistani.pk/wp-content/plugins/thrive-comments/assets/images/placeholder_avatar_icon.svg">
+                        </div>
+                        <div class="w-full shadow-lg shadow-[#F6F7F8]">
+                            <textarea class="outline-none focus:border-none focus:ring-0 h-[120px] border-4 w-full py-2 px-2 text-[#393939] bg-[#F6F7F8]"
+                                style="border: 1px solid #c8cacb; font-family: roboto regular;" tabindex="1" class="mainInput" id="tcm-post-content"
+                                name="tcm-post-content" placeholder="Enter your comment..."></textarea>
+                        </div>
+                    </div>
+                    <div class="flex gap-2 cursor-pointer items-center justify-end lg:pt-[60px]">
+                        <img class=""
+                            src="https://propakistani.pk/wp-content/plugins/thrive-comments/assets/images/subscr-env.png">
+                        <p class="underline text-[13px] text-[#434343] font-[400]">
+                            Subscribe to comments</p>
+                    </div>
+                </div>
+                <div class="py-4 lg:w-[25%] px-4 hidden lg:block ">
+                    <div class="bg-[#F6F7FA] px-4 py-2 text-[22px] font-[900]">Latest News</div>
+                    <div class="flex justify-between gap-2 py-4 max-w-[320px]">
+                        <p class="text-[16px] font-[600] cursor-pointer">
+                            CNG Stations Will Remain Closed for 2 Days in Sindh
+                        </p>
+                        <img class="w-[85px]  cursor-pointer"
+                            src="https://propakistani.pk/wp-content/uploads/2023/11/FIA-office-395x235.jpg">
+                    </div>
+                    <div class="flex justify-between gap-2 py-4 max-w-[320px] ">
+                        <p class="text-[16px] font-[600] cursor-pointer">
+                            Pakistan Vs. India T20 World Cup 2024 Clash Will be Played in This Ne…
+                        </p>
+                        <img class="w-[85px] object-cover cursor-pointer"
+                            src="https://propakistani.pk/wp-content/uploads/2024/01/loadshedding--395x235.jpg">
+                    </div>
+                    <div class="flex justify-between gap-2 py-4 max-w-[320px] ">
+                        <p class="text-[16px] font-[600] cursor-pointer">
+                            Caretaker IT Minister Takes Center Stage At WEF Davos
+                        </p>
+                        <img class="w-[85px] object-cover cursor-pointer"
+                            src="https://propakistani.pk/wp-content/uploads/2022/08/Pakistan-America-395x235.jpg">
+                    </div>
+                    <div class="flex justify-between gap-2 py-4 max-w-[320px]">
+                        <p class="text-[16px] font-[600] cursor-pointer">
+                            HBL, Visa Announce Winners of First Edition of She's Next Program in …
+                        </p>
+                        <img class="w-[85px] object-cover cursor-pointer"
+                            src="https://propakistani.pk/wp-content/uploads/2024/01/pak-hockey-1-395x235.jpg">
+                    </div>
+                    <div class="flex justify-between gap-2 py-4 max-w-[320px]">
+                        <p class="text-[16px] font-[600] cursor-pointer">
+                            Beware of Fake Election Commission WhatsApp Account
+                        </p>
+                        <img class="w-[85px] object-cover cursor-pointer"
+                            src="https://propakistani.pk/wp-content/uploads/2022/12/Onions-395x235.jpg">
+                    </div>
+                    <div class="py-4">
+                        <div class="bg-[#F6F7FA] px-4 py-2 text-[22px] font-[900]">Now Trending</div>
+                        <div class="py-2 hover:text-[#239991]">
+                            <img class="object-cover cursor-pointer"
+                                src="https://propakistani.pk/wp-content/uploads/2022/06/teacher-395x235.jpg">
+                            <p class="text-[16px] hover:text-[#239991] leading-[19px] py-2 font-[600] cursor-pointer">
+                                FIA Registers Case of Illegal Plots Allotment in Islamabad
+                            </p>
+                        </div>
+                        <div class="py-2 hover:text-[#239991]">
+                            <img class="object-cover cursor-pointer"
+                                src="	https://propakistani.pk/wp-content/uploads/2024/01/Xiaomi-14-Ultra-395x235.jpg">
+                            <p class="text-[16px] hover:text-[#239991] leading-[19px] py-2 font-[600 cursor-pointer]">
+                                FIA Registers Case of Illegal Plots Allotment in Islamabad
+                            </p>
+                        </div>
+                        <div class="py-2 hover:text-[#239991]">
+                            <img class="object-cover cursor-pointer"
+                                src="	https://propakistani.pk/wp-content/uploads/2023/06/industry-395x235.jpg">
+                            <p class="text-[16px] hover:text-[#239991] leading-[19px] py-2 font-[600] cursor-pointer">
+                                FIA Registers Case of Illegal Plots Allotment in Islamabad
+                            </p>
+                        </div>
+                        <div class="py-2 hover:text-[#239991]">
+                            <img class="object-cover cursor-pointer"
+                                src="https://propakistani.pk/wp-content/uploads/2022/08/Pakistan-America-395x235.jpg">
+                            <p class="text-[16px]  leading-[19px] py-2 font-[600] cursor-pointer">
+                                FIA Registers Case of Illegal Plots Allotment in Islamabad
+                            </p>
+                        </div>
+                        <div class="py-2 hover:text-[#239991]">
+                            <img class="object-cover cursor-pointer"
+                                src="https://propakistani.pk/wp-content/uploads/2024/01/Artifact-app-395x235.jpg">
+                            <p class="text-[16px]  leading-[19px] py-2 font-[600] cursor-pointer">
+                                FIA Registers Case of Illegal Plots Allotment in Islamabad
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+    <section>
+        <div class="max-w-[1280px] mx-auto px-4" style="font-family: lato;">
+            <div class="flex lg:flex-row flex-col gap-6">
+                <div class="lg:w-[50%]">
+                    <div
+                        class="uppercase cursor-pointer border-l-[8px] py-2 leading-[24px] px-4 text-[20px] font-[800] border-[#DC3546] text-[#dc3545]">
+                        lens</div>
+                    <div class="py-6 flex flex-col lg:flex-row gap-6">
+                        <div class="lg:w-[50%] flex flex-col gap-2 ">
+                            <div>
+                                <img class="cursor-pointer" src="https://propakistani.pk/lens/wp-content/uploads/2024/01/noah-768x430.jpg">
+                            </div>
+                            <div>
+                                <p class="font-[900] cursor-pointer text-[20px] leading-[24px]">Ali Zafar Gives Thumbs Up to Bollywood’s Cover of ‘Jhoom’</p>
+                            </div>
+                        </div>
+                        <div class="lg:w-[50%] text-[15px] leading-[18px] font-[700] flex flex-col gap-4">
+                            <div class="flex flex-col gap-2 font-[700]">
+                                <p class="cursor-pointer">Shehnaaz Gill Spells Desi Glam in Deep-Neck Bustier and Sequin…</p>
+                                <div class="h-[4px] w-[120px] bg-[#EFF4F5]"></div>
+                            </div>
+                            <div class="flex flex-col gap-2 font-[700]">
+                                <p class="cursor-pointer">Shehnaaz Gill Spells Desi Glam in Deep-Neck Bustier and Sequin…</p>
+                                <div class="h-[4px] w-[120px] bg-[#EFF4F5]"></div>
+                            </div>
+                            <div class="flex flex-col gap-2 font-[700]">
+                                <p class="cursor-pointer">Shehnaaz Gill Spells Desi Glam in Deep-Neck Bustier and Sequin…</p>
+                                <div class="h-[4px] w-[120px] bg-[#EFF4F5]"></div>
+                            </div>
+                            <div class="flex flex-col gap-2 font-[700]">
+                                <p class="cursor-pointer">Shehnaaz Gill Spells Desi Glam in Deep-Neck Bustier and Sequin…</p>
+                                <div class="h-[4px] w-[120px] bg-[#EFF4F5]"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 py-4">
+                        <div>
+                            <img class="w-full h-[120px] object-cover cursor-pointer"
+                                src="https://propakistani.pk/lens/wp-content/uploads/2024/01/fighter-3-150x150.jpg">
+                            <p class="font-[700] cursor-pointer text-[13px] leading-[16px] py-2">Pakistani Celebrities Express Harsh
+                                Reactions to …</p>
+                        </div>
+                        <div>
+                            <img class="w-full h-[120px] object-cover cursor-pointer"
+                                src="	https://propakistani.pk/lens/wp-content/uploads/2024/01/yumna-18-150x150.jpg">
+                            <p class="font-[700] text-[13px] cursor-pointer leading-[16px] py-2">Pakistani Celebrities Express Harsh
+                                Reactions to …</p>
+                        </div>
+                        <div>
+                            <img class="w-full h-[120px] object-cover cursor-pointer"
+                                src="	https://propakistani.pk/lens/wp-content/uploads/2024/01/falak-150x150.jpg">
+                            <p class="font-[700] text-[13px] leading-[16px] py-2 cursor-pointer">Pakistani Celebrities Express Harsh
+                                Reactions to …</p>
+                        </div>
+                        <div>
+                            <img class="w-full h-[120px] object-cover cursor-pointer"
+                                src="	https://propakistani.pk/lens/wp-content/uploads/2024/01/zaid-ali-150x150.jpg">
+                            <p class="font-[700] text-[13px] leading-[16px] py-2 cursor-pointer">Pakistani Celebrities Express Harsh
+                                Reactions to …</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-[50%] r">
+                    <div
+                        class="uppercase cursor-pointer border-l-[8px] py-2 leading-[24px] px-4 text-[20px] font-[800] border-[#3498DB] text-[#3498DB]">
+                        proproperty</div>
+                    <div class="py-6 flex lg:flex-row flex-col gap-8">
+                        <div class="lg:w-[50%] flex flex-col gap-2 ">
+                            <div>
+                                <img class="cursor-pointer"
+                                    src="https://propakistani.pk/proproperty/wp-content/uploads/2023/12/Marina-Sports-City-MEINHARDT-1-768x430.jpg">
+                            </div>
+                            <div>
+                                <p class="cursor-pointer font-[900] text-[20px] leading-[24px]">Marina Sports City and Meinhardt Join
+                                    Hands to Elevate Development Excellence in West Lahore</p>
+                            </div>
+                        </div>
+                        <div class="lg:w-[50%] flex text-[15px] leading-[18px] flex-col gap-4">
+                            <div class="flex  flex-col gap-2 font-[700]">
+                                <p class="cursor-pointer">Shehnaaz Gill Spells Desi Glam in Deep-Neck Bustier and Sequin…</p>
+                                <div class="h-[4px] w-[120px] bg-[#EFF4F5]"></div>
+                            </div>
+                            <div class="flex flex-col gap-2 font-[700]">
+                                <p class="cursor-pointer">Shehnaaz Gill Spells Desi Glam in Deep-Neck Bustier and Sequin…</p>
+                                <div class="h-[4px] w-[120px] bg-[#EFF4F5]"></div>
+                            </div>
+                            <div class="flex flex-col gap-2 font-[700]">
+                                <p class="cursor-pointer">Shehnaaz Gill Spells Desi Glam in Deep-Neck Bustier and Sequin…</p>
+                                <div class="h-[4px] w-[120px] bg-[#EFF4F5]"></div>
+                            </div>
+                            <div class="flex flex-col gap-2 font-[700]">
+                                <p class="cursor-pointer">Shehnaaz Gill Spells Desi Glam in Deep-Neck Bustier and Sequin…</p>
+                                <div class="h-[4px] w-[120px] bg-[#EFF4F5]"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 ">
+                        <div>
+                            <img class="w-full h-[120px] object-cover cursor-pointer"
+                                src="https://propakistani.pk/lens/wp-content/uploads/2024/01/fighter-3-150x150.jpg">
+                            <p class="font-[700] text-[13px] leading-[16px] py-2 cursor-pointer">Pakistani Celebrities Express Harsh
+                                Reactions to …</p>
+                        </div>
+                        <div>
+                            <img class="w-full h-[120px] object-cover cursor-pointer"
+                                src="https://propakistani.pk/lens/wp-content/uploads/2024/01/fighter-3-150x150.jpg">
+                            <p class="font-[700] text-[13px] leading-[16px] cursor-pointer py-2">Pakistani Celebrities Express Harsh
+                                Reactions to …</p>
+                        </div>
+                        <div>
+                            <img class="w-full h-[120px] object-cover cursor-pointer"
+                                src="https://propakistani.pk/lens/wp-content/uploads/2024/01/fighter-3-150x150.jpg">
+                            <p class="font-[700] text-[13px] leading-[16px] cursor-pointer py-2">Pakistani Celebrities Express Harsh
+                                Reactions to …</p>
+                        </div>
+                        <div>
+                            <img class="w-full h-[120px] object-cover cursor-pointer"
+                                src="https://propakistani.pk/lens/wp-content/uploads/2024/01/fighter-3-150x150.jpg">
+                            <p class="font-[700] text-[13px] leading-[16px] py-2 cursor-pointer">Pakistani Celebrities Express Harsh
+                                Reactions to …</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="Footer bg-[#292D30] text-white py-8">
+        <div class="max-w-[1280px] mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-6 py-[40px]">
+                <div class="w-[20%] hidden lg:block">
+                   
+                    <img class="" src="https://propakistani.pk/wp-content/themes/ppv5/img/footer-dark.png">
+                </div>
+                <div class="lg:w-[50%] flex flex-col gap-6">
+                    <div class="flex gap-4">
+                        <img class="lg:hidden md:hidden cursor-pointer" src="https://propakistani.pk/wp-content/themes/ppv5/img/logo-mini.png">
+                        <img class="cursor-pointer" src="https://propakistani.pk/wp-content/themes/ppv5/img/footer-light.png">
+                    </div>
+                    <p class="copyright-text  small text-[13px] leading-[19px] text-[#798186]">
+                        ProPakistani is the premier and most trustworthy resource for all happenings in technology,
+                        telecom, business, sports, auto, education, real estate and entertainment news in Pakistan.
+                        <br><br>
+                        Whether it's the top trending news, inside scoops or features, interviews, market trends and
+                        analysis, product reviews, How to's or tutorials – we cover it all.
+                    </p>
+                </div>
+                <div class="lg:w-[30%] w-full flex flex-col gap-6">
+                    <p class="text-[28px] leading-[34px] font-[400] ">Follow Us</p>
+                    <div class="flex items-center">
+                            <input class="w-full border-none bg-[#393F43] px-4 py-4 text-[#777F83] outline-none focus:border-none focus:ring-0" type="text" placeholder="Enter Your Email Address" />
+
+                        <button class="px-4 py-4 border font-[500] border-[#393F43] bg-[#697278]">Subscribe</button>
+                    </div>
+                    <div class=" grid grid-cols-6 cursor-pointer gap-2 ">
+                        <div class="icon w-full bg-[#393F43] flex items-center justify-center"> <i class="flex items-center justify-center w-full fa-brands hover:bg-[#4C76BE] py-4  px-4  text-white fa-facebook-f lg:fa-2x"></i>
+                        </div>
+                        <div class="icon bg-[#393F43] flex items-center justify-center"> <i class="flex items-center justify-center w-full fa-brands py-4 hover:bg-[#05B8EC]  px-4 text-white fa-twitter lg:fa-2x"></i>
+                        </div>
+                        <div class="icon bg-[#393F43] "> <i class="flex items-center justify-center w-full fa-brands py-4  px-4 hover:bg-[#0077B5] text-white fa-linkedin lg:fa-2x"></i>
+
+                        </div>
+                        <div class="icon bg-[#393F43] flex items-center justify-center"> <i class="flex items-center justify-center w-full fa-brands py-4  px-4 hover:bg-[#FE0200] text-white fa-youtube lg:fa-2x"></i>
+                        </div>
+                        <div class="icon bg-[#393F43] flex items-center justify-center">
+
+                            <i class="flex items-center justify-center w-full text-white fa-brands py-4  px-4 hover:bg-[#E33E2E]  fa-android lg:fa-2x"></i>
+
+                        </div>
+                        <div class="icon bg-[#393F43] flex items-center justify-center"> <i class="flex items-center justify-center w-full text-white py-4  px-4 hover:bg-[#50595F] fa-brands fa-apple lg:fa-2x"></i></i>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-[#798186] cursor-pointer lg:pr-[80px] flex flex-col gap-4 text-[12px] leading-[22px]">
+                <p>Telecom News
+                    Business News
+                    Education News
+                    Carbase
+                    ProPrice
+                    Samsung Price in Pakistan
+                    iPhone Price in Pakistan
+                    OPPO Price in Pakistan
+                    Infinix Price in Pakistan
+                    Tecno Price in Pakistan
+                    Xiaomi Price in Pakistan
+                    Vivo Price in Pakistan
+                    Zong Call Packages
+                    Zong SMS Packages
+                    Zong Internet 3G / 4G Packages
+                    Jazz Call Packages
+                    Jazz SMS Packages
+                    Jazz Internet 3G / 4G Packages
+                    Telenor Call Packages
+                    Telenor SMS Packages
+                    Telenor Internet 3G / 4G Packages
+                    Ufone Call Packages
+                    Ufone SMS Packages
+                    Ufone Internet 3G / 4G Packages
+                    Celebrities
+                    How To
+                    Prayer Timings
+                    Budget 2023-24
+                    Live Streaming Today
+                    PSL 2024
+                    PSL Schedule 2024
+                    PSL Points Table 2024
+                    PSL Live Streaming</p>
+                    <p class="cursor-pointer">About
+                        Contact Us
+                        Privacy Policy
+                        Careers</p>
+                        <p class="text-[13px]">
+                            © 2024 ProPakistani.PK - All rights reserved
+                        </p>
+                
+            </div>
+        </div>
+    </section>
+    <section class="footer-marque bg-[#F0F0F0]  py-2">
+        <div class="max-w-[1280px] mx-auto px-4">
+            <ul class="list-unstyled m-0 list-none flex items-center gap-4 justify-between">
+                <li>
+                <a href="https://propakistani.pk/" target="_blank">
+                <img class=" w-[130px]"  width="200" height="40" class="no-lazy" src="https://propakistani.pk/wp-content/themes/ppv5/img/mob-logos/propak.png">
+                </a>
+                </li>
+                <li>
+                <a href="https://propakistani.pk/lens/" target="_blank">
+                <img class=" w-[130px]"  width="200" height="63" class="no-lazy" src="https://propakistani.pk/wp-content/themes/ppv5/img/mob-logos/lens-m.png">
+                </a>
+                </li>
+                <li>
+                <a href="https://propakistani.pk/carbase/" target="_blank">
+                <img class=" w-[130px]"  width="199" height="56" class="no-lazy" src="https://propakistani.pk/wp-content/themes/ppv5/img/mob-logos/carbase-m.png">
+                </a>
+                </li>
+                <li>
+                <a href="https://propakistani.pk/how-to/" target="_blank">
+                <img  class=" w-[130px]" width="200" height="63" class="no-lazy" src="https://propakistani.pk/wp-content/themes/ppv5/img/mob-logos/how-to.png">
+                </a>
+                </li>
+                <li>
+                <a href="https://propakistani.pk/price/" target="_blank">
+                <img class=" w-[130px]"  width="200" height="63" class="no-lazy" src="https://propakistani.pk/wp-content/themes/ppv5/img/mob-logos/proprice-m.png">
+                </a>
+                </li>
+                <li>
+                <a href="https://propakistani.pk/category/sports/" target="_blank">
+                <img  class=" w-[130px]" width="200" height="63" class="no-lazy" src="https://propakistani.pk/wp-content/themes/ppv5/img/mob-logos/prosports.png">
+                </a>
+                </li>
+                <li>
+                <a href="https://propakistani.pk/proproperty/" target="_blank">
+                <img class=" w-[130px]"  width="200" height="40" class="no-lazy" src="https://propakistani.pk/wp-content/themes/ppv5/img/mob-logos/property-m.png">
+                </a>
+                </li>
+                </ul>
+
+        </div>
+
+    </section>
+</body>
+
+</html>
